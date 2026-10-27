@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "DairyFresh Delivery",
+    "slug": "dairyfresh-delivery",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "dairyfreshdelivery",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#F7FAF9"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.dairyfresh.delivery"
+    },
+    "android": {
+      "package": "com.dairyfresh.delivery",
+      "adaptiveIcon": {
+        "backgroundColor": "#16A34A"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "name": "DairyFresh Delivery",
+      "shortName": "DF Rider"
+    },
+    "plugins": [
+      "expo-router"
+    ]
+  }
+}
