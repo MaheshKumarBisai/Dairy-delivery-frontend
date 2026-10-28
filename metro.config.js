@@ -1,18 +1,22 @@
 const { getDefaultConfig } = require('expo/metro-config');
 const path = require('path');
+const fs = require('fs');
 
 const projectRoot = __dirname;
-const monorepoRoot = path.resolve(projectRoot, '..');
-
 const config = getDefaultConfig(projectRoot);
 
-// Watch all files within the monorepo (including @dairy/shared)
-config.watchFolders = [monorepoRoot];
+const localShared = path.resolve(projectRoot, 'shared');
 
-// Let Metro know where to resolve packages
+if (fs.existsSync(localShared)) {
+  config.watchFolders = [localShared];
+  config.resolver.extraNodeModules = {
+    ...config.resolver.extraNodeModules,
+    '@dairy/shared': localShared,
+  };
+}
+
 config.resolver.nodeModulesPaths = [
   path.resolve(projectRoot, 'node_modules'),
-  path.resolve(monorepoRoot, 'node_modules'),
 ];
 
 module.exports = config;

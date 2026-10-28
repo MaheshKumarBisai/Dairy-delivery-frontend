@@ -4,13 +4,16 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "types": []
+    "types": [],
+    "paths": {
+      "@dairy/shared": ["./shared/src/index.ts"]
+    }
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "../shared/src/**/*.ts",
-    "../shared/src/**/*.tsx"
+    "shared/src/**/*.ts",
+    "shared/src/**/*.tsx"
   ],
   "exclude": [
     "node_modules",
